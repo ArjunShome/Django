@@ -18,6 +18,6 @@ from django.urls import path
 from django.conf.urls import include
 
 urlpatterns = [
-    path('Challenge/', include('ChallengeApp.urls')),
+    path('challenge/', include('ChallengeApp.urls')),
     path('admin/', admin.site.urls),
 ]
