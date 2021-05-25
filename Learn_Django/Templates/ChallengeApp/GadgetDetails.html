@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Gadget Details</title>
+    <link rel="stylesheet" href="{% static 'ChallengeApp/css/app.css' %}">
+  </head>
+  <body>
+    <h1>Below are the Gadget Details for the Recorded Individuals</h1>
+    {% if user_details %}
+    <table>
+      <thead>
+        <td>Name</td>
+        <td>Gadget Type</td>
+        <td>Brand Name</td>
+        <td>Date Bought</td>
+        <td>Store Name</td>
+        <td>Price in <b>(Rs)</b></td>
+      </thead>
+      {% for data in user_details %}
+        <tr>
+          <td>{{ data.Name }}</td>
+          <td>{{ data.Type }}</td>
+          <td>{{ data.Brand }}</td>
+          <td>{{ data.Buy_Date }}</td>
+          <td>{{ data.BoughtFrom }}</td>
+          <td>{{ data.Price }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+        <p>SORRY!!, THERE ARE NO USER DETAILS PRESENT AT THE MOMENT</p>
+    {% endif %}
+  </body>
+</html>
