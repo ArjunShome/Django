@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "ChallengeApp/BaseTemplate.html" %}
+  {% block basetemplate %}
+  <div class="container-fluid">
+    <h1>Below are the Users Registered</h1>
+    {% if user_list %}
+    <table>
+      <thead>
+        <td>Uername</td>
+      </thead>
+      {% for data in user_list %}
+        <tr>
+          <td>{{ data.username }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+        <p>SORRY!!, THERE ARE NO USERS PRESENT AT THE MOMENT</p>
+    {% endif %}
+  </div>
+  {% endblock %}
