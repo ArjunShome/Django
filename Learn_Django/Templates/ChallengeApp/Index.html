@@ -1,27 +1,16 @@
 <!DOCTYPE html>
+{% extends "ChallengeApp/BaseTemplate.html" %}
 {% load static %}
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Challenge App</title>
-    <link rel="stylesheet" href="{% static 'ChallengeApp/css/app.css' %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  </head>
-  <body>
+  {% block basetemplate %}
+  <div class="container-fluid">
     <p>Hey This is my First Challenge App</p>.<br>
     <p>PRESS THE BUTTON TO SIGN IN</p>
-    <a class="btn btn-primary" href="/challenge/signup">SIGN UP</a>
+    <a class="btn btn-primary" href="{% url 'challenge:signup' %}">SIGN UP</a>
     <p>PRESS THE BUTTON TO Check the Details</p>
-    <a class="btn btn-primary" href="/challenge/details">Details</a>
+    <a class="btn btn-primary" href="{% url 'challenge:details' %}">Details</a>
     <p>PRESS THE BUTTON TO Go to admin page</p>
-    <a class="btn btn-primary" href="/admin">Admin</a>
-
+    <a class="btn btn-primary" href="{% url 'admin:index' %}">Admin</a>
     <em>Take a look at the bike below, buddy!!</em>.<br>
     <img src="{% static 'ChallengeApp/images/Bike.jpg' %}" alt="OH!!, Sorry The Image could not be rendered.">
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
-</html>
+  </div>
+  {% endblock %}

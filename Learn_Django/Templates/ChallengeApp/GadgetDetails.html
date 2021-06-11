@@ -1,12 +1,7 @@
 <!DOCTYPE html>
-{% load static %}
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Gadget Details</title>
-    <link rel="stylesheet" href="{% static 'ChallengeApp/css/app.css' %}">
-  </head>
-  <body>
+{% extends "ChallengeApp/BaseTemplate.html" %}
+  {% block basetemplate %}
+  <div class="container-fluid">
     <h1>Below are the Gadget Details for the Recorded Individuals</h1>
     {% if user_details %}
     <table>
@@ -20,7 +15,7 @@
       </thead>
       {% for data in user_details %}
         <tr>
-          <td>{{ data.Name }}</td>
+          <td>{{ data.User }}</td>
           <td>{{ data.Type }}</td>
           <td>{{ data.Brand }}</td>
           <td>{{ data.Buy_Date }}</td>
@@ -32,5 +27,5 @@
     {% else %}
         <p>SORRY!!, THERE ARE NO USER DETAILS PRESENT AT THE MOMENT</p>
     {% endif %}
-  </body>
-</html>
+  </div>
+  {% endblock %}
